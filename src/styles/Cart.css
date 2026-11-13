@@ -1,0 +1,53 @@
+dialog {
+  position: fixed;
+  inset: 0 0 0 auto;
+  margin: 0;
+  height: 100%;
+  max-height: none;
+  width: min(100%, 430px);
+  max-width: 100%;
+  border: 0;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 25px;
+}
+dialog::backdrop {
+  background: #173a4a77;
+}
+.drawer-head,
+.cart-row,
+#cart-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+.drawer-head h2 {
+  margin: 0;
+  font-size: 30px;
+}
+.drawer-head button,
+.cart-row button {
+  border: 1px solid var(--line);
+  background: none;
+  padding: 4px 10px;
+}
+.cart-row img {
+  width: 60px;
+  height: 65px;
+}
+.cart-row div:first-of-type {
+  flex: 1;
+}
+.cart-row small {
+  display: block;
+  color: var(--muted);
+}
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+

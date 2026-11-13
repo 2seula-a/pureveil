@@ -1,0 +1,27 @@
+footer {
+  background: #1d4559;
+  color: #f8fcff;
+  padding: 40px max(5%, calc((100vw - 1240px) / 2));
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 22px;
+  align-items: center;
+}
+footer p {
+  margin: 0;
+  text-align: center;
+}
+footer a:last-child {
+  justify-self: end;
+}
+
+@media (max-width: 700px) {
+  footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  footer p {
+    grid-row: 2;
+    grid-column: 1/-1;
+  }
+}

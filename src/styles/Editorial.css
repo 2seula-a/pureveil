@@ -1,0 +1,36 @@
+.editorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #e2f2f8;
+  max-width: 1260px;
+  margin: 0 auto 75px;
+}
+.editorial img {
+  height: 100%;
+  max-height: 520px;
+}
+.editorial > div {
+  padding: clamp(30px, 6vw, 92px);
+  align-self: center;
+}
+.editorial p {
+  color: var(--muted);
+  max-width: 350px;
+  margin: 20px 0;
+}
+
+@media (max-width: 1024px) {
+  .editorial {
+    margin-inline: 5%;
+  }
+}
+
+@media (max-width: 700px) {
+  .editorial {
+    grid-template-columns: 1fr;
+    margin-bottom: 42px;
+  }
+  .editorial img {
+    aspect-ratio: 1.4;
+  }
+}

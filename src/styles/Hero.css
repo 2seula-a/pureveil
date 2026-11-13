@@ -1,0 +1,137 @@
+/* PUREVEIL hero: desktop height stays consistent across slides */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  height: clamp(520px, 34vw, 650px);
+  background: #e2f2f8;
+}
+.hero-copy {
+  min-width: 0;
+  padding: 40px 5% 40px max(8%, calc((100vw - 1220px) / 2));
+  align-self: center;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.23em;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 16px;
+}
+.hero .eyebrow span {
+  display: inline-block;
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.hero h1 {
+  font-size: clamp(59px, 7.2vw, 120px);
+  line-height: 0.93;
+  letter-spacing: -0.065em;
+  margin: 0 0 24px;
+}
+.hero-line {
+  font-size: clamp(17px, 1.7vw, 23px);
+  margin: 0 0 7px;
+  font-weight: 650;
+}
+.desc,
+.heading > p:last-child {
+  color: var(--muted);
+}
+.desc {
+  margin: 0 0 26px;
+}
+.cta {
+  display: inline-flex;
+  gap: 24px;
+  align-items: center;
+  background: var(--accent);
+  color: white;
+  padding: 13px 19px;
+  font-size: 13px;
+}
+.cta:hover { background: #16465c; }
+
+/* The photo frame has a fixed, reliable height from its grid row. */
+.hero-media {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 36px;
+}
+.hero-art {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+.hero-slide.is-active { opacity: 1; }
+.hero-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 36px;
+}
+.hero-controls[hidden] { display: none; }
+.hero-controls button {
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+}
+.hero-dot span {
+  width: 8px;
+  height: 8px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+.hero-dot[aria-pressed="true"] span {
+  width: 19px;
+  border-radius: 9px;
+  background: currentColor;
+}
+.hero-toggle { font-size: 12px; }
+
+@media (max-width: 1024px) {
+  .hero { height: 520px; }
+  .hero-copy { padding: 32px 6%; }
+}
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+  }
+  .hero-copy { padding: 38px 6% 34px; }
+  .hero h1 {
+    font-size: clamp(53px, 12vw, 85px);
+    margin-bottom: 18px;
+  }
+  .desc { font-size: 13px; }
+  .desc br { display: none; }
+  .hero-media { grid-template-rows: auto 36px; }
+  .hero-art { aspect-ratio: 1.35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide { transition: none; }
+}
+@media (min-width: 701px) and (max-width: 1024px) {
+  .hero-slide {
+    transform: scale(1.2);
+  }
+}

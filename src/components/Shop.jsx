@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { asset, categories, products, won } from "../data/products.js";
 
-export default function Shop({ onAdd }) {
-  const [filter, setFilter] = useState("all");
+export default function Shop({ onAdd, filter, setFilter }) {
   const [expanded, setExpanded] = useState(false);
   const [focusNew, setFocusNew] = useState(false);
   const listRef = useRef(null);
@@ -15,6 +14,9 @@ export default function Shop({ onAdd }) {
       setFocusNew(false);
     }
   }, [expanded, focusNew]);
+  useEffect(() => {
+    setExpanded(false);
+  }, [filter]);
   function selectFilter(value, scroll = false) {
     setFilter(value);
     setExpanded(false);

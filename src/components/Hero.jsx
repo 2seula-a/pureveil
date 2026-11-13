@@ -56,7 +56,7 @@ export default function Hero() {
           <br /> 가벼운 데일리 스킨케어를 만나보세요.
         </p>
         <a className="cta" href="#shop">
-          컬렉션 쇼핑하기 <span aria-hidden="true">↗</span>
+          상품 보러가기 <span aria-hidden="true">↗</span>
         </a>
       </div>
       <div
